@@ -21,6 +21,7 @@ while True:
     print("2) Elf")
     print("3) Human")
     print("4) Orc")
+    print("5) Exit Game")
     character = input("Choose your character: ")
     if character == "1" or character.lower() == "wizard":
         character = wizard
@@ -42,24 +43,31 @@ while True:
         my_hp = orc_hp
         my_damage = orc_damage
         break
-    print("Unknown character")
-print("You have chosen the character: " + character)
-print("Health = ", my_hp)
-print("Damage = ", my_damage)
-print()
+    elif character == "5":
+        break
+    else:
+        print("Unknown character")
 
-while True:
-    dragon_hp = dragon_hp - my_damage
-    print("The", character, "damaged the Dragon!")
-    print("The dragon's hitpoints are now:", dragon_hp)
+if character != "5":
+    print("You have chosen the character: " + character)
+    print("Health = ", my_hp)
+    print("Damage = ", my_damage)
     print()
-    if dragon_hp <= 0:
-        print("The dragon has lost the battle.")
-        break
-    my_hp = my_hp - dragon_damage
-    print("The dragon has damaged the", character, "!")
-    print("The", character, "'s hitpoints are now:", my_hp)
-    print()
-    if my_hp <= 0:
-        print("The", character, "has lost the battle.")
-        break
+
+    while True:
+        dragon_hp = dragon_hp - my_damage
+        print("The", character, "damaged the Dragon!")
+        print("The dragon's hitpoints are now:", dragon_hp)
+        print()
+        if dragon_hp <= 0:
+            print("The dragon has lost the battle.")
+            break
+        my_hp = my_hp - dragon_damage
+        print("The dragon has damaged the", character, "!")
+        print("The", character, "'s hitpoints are now:", my_hp)
+        print()
+        if my_hp <= 0:
+            print("The", character, "has lost the battle.")
+            break
+else:
+    print("Exited game")
