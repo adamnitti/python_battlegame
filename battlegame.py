@@ -1,14 +1,17 @@
 wizard = "Wizard"
 elf = "Elf"
 human = "Human"
+orc = "Orc"
 
 wizard_hp = 70
 elf_hp = 100
 human_hp = 150
+orc_hp = 200
 
 wizard_damage = 150
 elf_damage = 100
 human_damage = 20
+orc_damage = 50
 
 dragon_hp = 300
 dragon_damage = 50
@@ -17,6 +20,7 @@ while True:
     print("1) Wizard")
     print("2) Elf")
     print("3) Human")
+    print("4) Orc")
     character = input("Choose your character: ")
     if character == "1" or character.lower() == "wizard":
         character = wizard
@@ -32,6 +36,11 @@ while True:
         character = human
         my_hp = human_hp
         my_damage = human_damage
+        break
+    elif character == "4" or character.lower() == "orc":
+        character = orc
+        my_hp = orc_hp
+        my_damage = orc_damage
         break
     print("Unknown character")
 print("You have chosen the character: " + character)
