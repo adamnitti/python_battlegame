@@ -18,17 +18,17 @@ while True:
     print("2) Elf")
     print("3) Human")
     character = input("Choose your character: ")
-    if character == "1" or character == "Wizard" or character == "wizard":
+    if character == "1" or character.lower() == "wizard":
         character = wizard
         my_hp = wizard_hp
         my_damage = wizard_damage
         break
-    elif character == "2" or character == "Elf" or character == "elf":
+    elif character == "2" or character.lower() == "elf":
         character = elf
         my_hp = elf_hp
         my_damage = elf_damage
         break
-    elif character == "3" or character == "Human" or character == "human":
+    elif character == "3" or character.lower() == "human":
         character = human
         my_hp = human_hp
         my_damage = human_damage
